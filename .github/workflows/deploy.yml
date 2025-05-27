@@ -11,9 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Zola
-        run: |
-          curl -s https://www.getzola.org/install.sh | bash
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.1
 
       - name: Build the site
         run: zola build
