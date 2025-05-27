@@ -1,0 +1,43 @@
+# Site-wide configuration
+base_url = "https://esp32.art"
+title = "ESP32 Art"
+description = "A community-curated gallery of creative ESP32 demos, games, and applications."
+default_language = "en"
+compile_sass = false
+build_search_index = true
+generate_rss = true
+rss_limit = 20
+paginate_by = 10
+
+# Mark all content in /entries/ as indexable
+[extra]
+entries_section = "entries"
+
+# Theme options can go here later
+[extra.theme]
+# placeholder if you decide to use a Zola theme
+
+# Taxonomies used for filtering
+# Boards, MCUs and Tags are all usable in search
+taxonomies = [
+  { name = "tags", rss = true, paginate_by = 10 },
+  { name = "boards", rss = false, paginate_by = 10 },
+  { name = "mcus", rss = false, paginate_by = 10 }
+]
+
+# Language-specific config if needed
+[languages.en]
+title = "ESP32 Art"
+description = "A community-curated gallery of creative ESP32 demos, games, and applications."
+
+# Build output
+output_dir = "public"
+
+# Search configuration
+[search]
+index_format = "elasticlunr_json"
+include_title = true
+include_description = true
+include_content = true
+include_taxonomies = ["tags", "boards", "mcus"]
+
