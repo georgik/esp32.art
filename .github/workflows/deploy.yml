@@ -17,7 +17,7 @@ jobs:
 
       - name: Build the site
         run: zola build
-        working-directory: ${{ github.workspace }}
+        working-directory: ${{ github.workspace }}/esp32.art
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
