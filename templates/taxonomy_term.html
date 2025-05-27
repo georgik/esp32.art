@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Entries tagged with “{{ term.name }}”</h1>
+
+<ul>
+  {% for page in term.pages %}
+  <li>
+    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+    <p>{{ page.description }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<p><a href="/">← Back to gallery</a></p>
+{% endblock content %}
