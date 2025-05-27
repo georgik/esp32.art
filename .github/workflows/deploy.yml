@@ -27,6 +27,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ github.workspace }}/public
+          publish_dir: ./public
           publish_branch: gh-pages
           cname: www.esp32.art
+          force_orphan: true
