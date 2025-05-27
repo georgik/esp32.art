@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.description }}</p>
+
+  {% if page.extra.images %}
+    {% for image in page.extra.images %}
+      <img src="/images/{{ image }}" alt="Screenshot" style="max-width: 400px;" />
+    {% endfor %}
+  {% endif %}
+
+  <h3>Supported Boards:</h3>
+  <ul>
+    {% for board in page.extra.boards %}
+      <li>
+        {{ board.name }}
+        {% if board.flash_url %}- <a href="{{ board.flash_url }}">Flash</a>{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h3>Source Code:</h3>
+  <p><a href="{{ page.extra.source_url }}">{{ page.extra.source_url }}</a></p>
+
+  <div class="entry-body">
+    {{ page.content | safe }}
+  </div>
+</article>
+{% endblock content %}
+

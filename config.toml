@@ -1,43 +1,48 @@
-# Site-wide configuration
+# The URL the site will be built for
 base_url = "https://esp32.art"
-title = "ESP32 Art"
-description = "A community-curated gallery of creative ESP32 demos, games, and applications."
-default_language = "en"
-compile_sass = false
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
+
+# Default language
+default_language = "en"
+
+# Syntax highlighting for code blocks
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-dark" # You can change this to any Zola-supported theme
+
+# RSS generation and pagination
 generate_rss = true
 rss_limit = 20
 paginate_by = 10
 
-# Mark all content in /entries/ as indexable
+# Custom extra variables
 [extra]
 entries_section = "entries"
 
-# Theme options can go here later
-[extra.theme]
-# placeholder if you decide to use a Zola theme
-
-# Taxonomies used for filtering
-# Boards, MCUs and Tags are all usable in search
+# Taxonomies for filtering
 taxonomies = [
   { name = "tags", rss = true, paginate_by = 10 },
   { name = "boards", rss = false, paginate_by = 10 },
   { name = "mcus", rss = false, paginate_by = 10 }
 ]
 
-# Language-specific config if needed
+# Language-specific metadata
 [languages.en]
 title = "ESP32 Art"
 description = "A community-curated gallery of creative ESP32 demos, games, and applications."
 
-# Build output
+# Output directory for the built site
 output_dir = "public"
 
-# Search configuration
+# Search index configuration
 [search]
 index_format = "elasticlunr_json"
 include_title = true
 include_description = true
 include_content = true
 include_taxonomies = ["tags", "boards", "mcus"]
-
