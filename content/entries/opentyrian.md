@@ -1,6 +1,7 @@
 +++
 title = "OpenTyrian - ESP32 Port"
 description = "Port of the arcade-style DOS shooter Tyrian to ESP32 using SDL3 and ESP-IDF 5.4."
+date = "2025-05-27"
 tags = ["game", "SDL", "C", "arcade"]
 mcus = ["esp32-p4"]
 boards = [

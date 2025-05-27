@@ -4,9 +4,6 @@ base_url = "https://esp32.art"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
-
 # Default language
 default_language = "en"
 
@@ -36,11 +33,7 @@ taxonomies = [
 title = "ESP32 Art"
 description = "A community-curated gallery of creative ESP32 demos, games, and applications."
 
-# Output directory for the built site
-output_dir = "public"
-
-# Search index configuration
-[search]
+[languages.en.search]
 index_format = "elasticlunr_json"
 include_title = true
 include_description = true

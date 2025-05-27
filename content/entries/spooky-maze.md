@@ -1,6 +1,7 @@
 +++
 title = "Spooky Maze Game - Bevy ECS Demo"
 description = "A Bevy ECS-based maze game that runs cross-platform including no_std ESP32 targets."
+date = "2025-05-27"
 tags = ["game", "maze", "bevy", "rust", "no_std"]
 mcus = ["esp32-s3"]
 boards = [

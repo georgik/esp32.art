@@ -4,23 +4,22 @@
 <h1>ESP32 Art Gallery</h1>
 <p>A collection of creative demos and games built with ESP32.</p>
 
+{% set entries = get_section(path="entries/_index.md", metadata_only=false) %}
 <ul>
-  {% for page in paginator.pages %}
-    <li>
-      <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-      <p>{{ page.description }}</p>
-      {% if page.extra.images %}
-        <img src="/images/{{ page.extra.images[0] }}" alt="{{ page.title }}" style="max-width: 300px;" />
-      {% endif %}
-      <p><strong>Boards:</strong> {{ page.extra.boards | map(attribute="name") | join(sep=", ") }}</p>
-      <p><strong>Tags:</strong> {{ page.taxonomies.tags | join(sep=", ") }}</p>
-    </li>
+  {% for page in entries.pages %}
+  <li>
+    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+    <p>{{ page.description }}</p>
+    {% if page.extra.images %}
+    <img src="/images/{{ page.extra.images[0] }}" alt="{{ page.title }}" style="max-width: 300px;" />
+    {% endif %}
+    {% if page.extra.boards %}
+    <p><strong>Boards:</strong> {{ page.extra.boards | map(attribute="name") | join(sep=", ") }}</p>
+    {% endif %}
+    {% if page.taxonomies.tags %}
+    <p><strong>Tags:</strong> {{ page.taxonomies.tags | join(sep=", ") }}</p>
+    {% endif %}
+  </li>
   {% endfor %}
 </ul>
-
-<nav>
-  {% if paginator.previous %}<a href="{{ paginator.previous }}">Previous</a>{% endif %}
-  {% if paginator.next %}<a href="{{ paginator.next }}">Next</a>{% endif %}
-</nav>
 {% endblock content %}
-
