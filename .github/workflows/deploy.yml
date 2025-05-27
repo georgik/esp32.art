@@ -17,6 +17,7 @@ jobs:
 
       - name: Build the site
         run: zola build
+        working-directory: ${{ github.workspace }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
