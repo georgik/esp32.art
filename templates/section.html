@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ section.title }}</h1>
+<p>{{ section.description }}</p>
+
+{% if section.path is starting_with("tags") %}
+{% set terms = get_taxonomy(kind="tags") %}
+<ul>
+    {% for term in terms.items %}
+    <li><a href="{{ term.permalink }}">{{ term.name }} ({{ term.pages | length }} entries)</a></li>
+    {% endfor %}
+</ul>
+{% elif section.path is starting_with("boards") %}
+{% set terms = get_taxonomy(kind="boards") %}
+<ul>
+    {% for term in terms.items %}
+    <li><a href="{{ term.permalink }}">{{ term.name }} ({{ term.pages | length }} entries)</a></li>
+    {% endfor %}
+</ul>
+{% elif section.path is starting_with("mcus") %}
+{% set terms = get_taxonomy(kind="mcus") %}
+<ul>
+    {% for term in terms.items %}
+    <li><a href="{{ term.permalink }}">{{ term.name }} ({{ term.pages | length }} entries)</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<p><a href="/">← Back to gallery</a></p>
+{% endblock content %}
+

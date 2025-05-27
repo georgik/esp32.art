@@ -13,13 +13,29 @@
     {% if page.extra.images %}
     <img src="/images/{{ page.extra.images[0] }}" alt="{{ page.title }}" style="max-width: 300px;" />
     {% endif %}
-    {% if page.extra.boards %}
-    <p><strong>Boards:</strong> {{ page.extra.boards | map(attribute="name") | join(sep=", ") }}</p>
+    
+    {% if page.taxonomies.boards %}
+    <p><strong>Boards:</strong> {{ page.taxonomies.boards | join(sep=", ") }}</p>
     {% endif %}
+    
+    {% if page.taxonomies.mcus %}
+    <p><strong>MCUs:</strong> {{ page.taxonomies.mcus | join(sep=", ") }}</p>
+    {% endif %}
+    
     {% if page.taxonomies.tags %}
     <p><strong>Tags:</strong> {{ page.taxonomies.tags | join(sep=", ") }}</p>
     {% endif %}
   </li>
   {% endfor %}
 </ul>
+
+<nav class="taxonomy-nav">
+  <h2>Browse by:</h2>
+  <ul>
+    <li><a href="/tags">Tags</a></li>
+    <li><a href="/boards">Boards</a></li>
+    <li><a href="/mcus">MCUs</a></li>
+  </ul>
+</nav>
+
 {% endblock content %}

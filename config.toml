@@ -23,9 +23,9 @@ entries_section = "entries"
 
 # Taxonomies for filtering
 taxonomies = [
-  { name = "tags", feed = true, paginate_by = 10, render = true },
-  { name = "boards", feed = false, paginate_by = 10, render = true },
-  { name = "mcus", feed = false, paginate_by = 10, render = true }
+    {name = "tags", feed = true, paginate_by = 10},
+    {name = "boards", feed = false, paginate_by = 10},
+    {name = "mcus", feed = false, paginate_by = 10}
 ]
 
 # Language-specific metadata
