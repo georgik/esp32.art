@@ -8,23 +8,26 @@
 <ul>
   {% for page in entries.pages %}
   <li>
-    <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-    <p>{{ page.description }}</p>
-    {% if page.extra.images %}
-    <img src="{{ page.extra.images[0] }}" alt="{{ page.title }}" style="max-width: 300px;" />
-    {% endif %}
-    
-    {% if page.taxonomies.boards %}
-    <p><strong>Boards:</strong> {{ page.taxonomies.boards | join(sep=", ") }}</p>
-    {% endif %}
-    
-    {% if page.taxonomies.mcus %}
-    <p><strong>MCUs:</strong> {{ page.taxonomies.mcus | join(sep=", ") }}</p>
-    {% endif %}
-    
-    {% if page.taxonomies.tags %}
-    <p><strong>Tags:</strong> {{ page.taxonomies.tags | join(sep=", ") }}</p>
-    {% endif %}
+    <div class="card">
+
+      <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+      <p>{{ page.description }}</p>
+      {% if page.extra.images %}
+      <img src="{{ page.extra.images[0] }}" alt="{{ page.title }}" style="max-width: 300px;" />
+      {% endif %}
+
+      {% if page.taxonomies.boards %}
+      <p><strong>Boards:</strong> {{ page.taxonomies.boards | join(sep=", ") }}</p>
+      {% endif %}
+
+      {% if page.taxonomies.mcus %}
+      <p><strong>MCUs:</strong> {{ page.taxonomies.mcus | join(sep=", ") }}</p>
+      {% endif %}
+
+      {% if page.taxonomies.tags %}
+      <p><strong>Tags:</strong> {{ page.taxonomies.tags | join(sep=", ") }}</p>
+      {% endif %}
+    </div>
   </li>
   {% endfor %}
 </ul>
