@@ -2,9 +2,15 @@
 title = "Conway's Game of Life - Rust Embedded"
 description = "Rust bare-metal implementation of Conway's Game of Life for multiple ESP32 boards."
 date = "2025-05-27"
+[extra]
+
 tags = ["demo", "game-of-life", "rust", "no_std"]
 mcus = ["esp32-c3", "esp32-c6", "esp32-s3"]
 boards = [
+    { name = "ESP32-P4-Function-EV-Board", flash_url = "https://github.com/georgik/OpenTyrian/releases" }
+]
+
+boardsx = [
     "esp32-c3-lcdkit",
     "esp32-c6-waveshare-1_47",
     "esp32-s3-box-3-minimal",
@@ -15,7 +21,7 @@ boards = [
     "wasm"
 ]
 source_url = "https://github.com/georgik/esp32-conways-game-of-life-rs"
-images = ["conway-preview.png"]
+images = ["https://github.com/georgik/esp32-conways-game-of-life-rs/raw/main/docs/m5stack-cores3-conway.jpg"]
 +++
 
 This Rust bare-metal implementation demonstrates Conway's Game of Life on multiple ESP32 boards using `no_std`. It supports a shared game core that runs across desktop, embedded targets, and even WebAssembly (wasm).

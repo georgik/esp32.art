@@ -2,6 +2,8 @@
 title = "Spooky Maze Game - Bevy ECS Demo"
 description = "A Bevy ECS-based maze game that runs cross-platform including no_std ESP32 targets."
 date = "2025-05-27"
+
+[extra]
 tags = ["game", "maze", "bevy", "rust", "no_std"]
 mcus = ["esp32-s3"]
 boards = [
@@ -11,7 +13,7 @@ boards = [
   { name = "wasm" }
 ]
 source_url = "https://github.com/georgik/esp32-spooky-maze-game"
-images = ["spooky-maze-preview.png"]
+images = ["https://github.com/georgik/esp32-spooky-maze-game/raw/main/assets/screenshot/spooky-maze-m5stack-atom-s3.webp"]
 +++
 
 Spooky Maze is a Bevy ECS-based game built in Rust with support for `no_std` embedded targets and desktop.
